@@ -51,7 +51,7 @@ namespace FluxOsu
             }
             catch (ArgumentNullException ex)
             {
-                Console.WriteLine("[Flux][ex]" + "[" + ex.ParamName + "]" + ex.Message);
+                Console.WriteLine("[Flux][ex]" + "[" + ex.ParamName + "]" + ex.Message);0
                 Console.WriteLine("hook function1 failed.");
                 Console.ReadLine();
                 return;
