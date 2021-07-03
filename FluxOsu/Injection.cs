@@ -8,5 +8,6 @@ namespace FluxOsu
 {
     class Injection
     {
+
     }
 }
