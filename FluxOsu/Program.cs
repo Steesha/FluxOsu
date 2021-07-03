@@ -14,8 +14,24 @@ namespace FluxOsu
         const string PATCH_ID = "today.flux.osu";
         static MethodInfo GetMethod(string name) => typeof(Program).GetMethod(name, BindingFlags.Static | BindingFlags.Public);
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            Console.WriteLine("-------class finder-------");
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            foreach (Type type in assembly.GetTypes())
+            {
+                Console.WriteLine(type.FullName);
+                MethodInfo[] methods = type.GetMethods();
+                foreach (MethodInfo method in methods)
+                {
+                    if (method.IsStatic && method.IsPublic)
+                    {
+                        Console.WriteLine("\t" + method.Name);
+                    }
+                }
+            }
+            Console.WriteLine("-------class finder-------");
+
             //Init harmony class.
             Harmony harmony = new Harmony(PATCH_ID);
             MethodInfo mOriginal = AccessTools.Method(typeof(ExampleClass), "function1");
