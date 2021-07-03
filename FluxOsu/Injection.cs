@@ -21,6 +21,8 @@ namespace FluxOsu
             if (!Tool.init()) return;
             Tool.Log("[SYS]Init Success!");
             Tool.Log("[SYS]DllHandle:" + Tool.dllhandle);
+            //Hooking.getAllAssembly();
+            Hooking.PatchTest();
         }
 
         public string getlog()

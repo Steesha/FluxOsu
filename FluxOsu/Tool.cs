@@ -40,7 +40,7 @@ namespace FluxOsu
 
             foreach (ProcessModule pm in Process.GetCurrentProcess().Modules)
             {
-                if (pm.ModuleName == "ncl.dll")
+                if (pm.ModuleName == "flux.dll")
                     return dllhandle = (int)pm.BaseAddress;
             }
             return 0;
